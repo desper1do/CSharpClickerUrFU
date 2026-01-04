@@ -141,7 +141,7 @@
     height: 350px;
     border-radius: 50%;
     border: none;
-    background-color: transparent; 
+    background-color: transparent;
     background-image: url('../images/goldMine.png');
     background-position: center;
     background-size: contain;
@@ -152,6 +152,8 @@
     position: relative;
     outline: none;
     filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
     #click-item:active {
@@ -314,6 +316,45 @@
 
     .main-area {
         height: 50vh;
-        order: -1; 
+        order: -1;
     }
+}
+
+@keyframes floatUpAndFade {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-80px) scale(1.5);
+    }
+}
+
+@keyframes floatUpAndFade {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-80px) scale(1.5);
+    }
+}
+
+.floating-text {
+    position: fixed;
+    color: var(--accent-gold);
+    font-size: 16px;
+    font-weight: 900;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    z-index: 99999 !important;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8), 2px 2px 0px #000;
+    animation: floatUpAndFade 0.8s ease-out forwards;
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
 }

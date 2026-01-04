@@ -9,19 +9,19 @@ public static class FormatHelper
         if (number < 1000)
             return number.ToString();
 
-        // K (Thousands) - от 1,000 до 999,999
+        // K (тысячи) - от 1.000 до 999.999
         if (number < 1_000_000)
             return FormatValue(number, 1_000, "K");
 
-        // M (Millions) - от 1,000,000 до 999,999,999
+        // M (миллионы) - от 1.000.000 до 999.999.999
         if (number < 1_000_000_000)
             return FormatValue(number, 1_000_000, "M");
 
-        // B (Billions) - от 1,000,000,000 до 999,999,999,999
+        // B (миллиарды) - от 1.000.000.000 до 999.999.999.999
         if (number < 1_000_000_000_000)
             return FormatValue(number, 1_000_000_000, "B");
 
-        // T (Trillions)
+        // T (триллионы)
         return FormatValue(number, 1_000_000_000_000, "T");
     }
 
